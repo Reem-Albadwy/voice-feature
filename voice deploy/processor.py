@@ -4,6 +4,9 @@ from difflib import SequenceMatcher
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
 from TTS.api import TTS
 
+os.environ["COQUI_TOS_AGREED"] = "1"
+
+
 # ======================
 # Text normalization
 # ======================
@@ -228,3 +231,4 @@ def run_pipeline(wav_path, expected_text, out_dir):
         "mapping_with_diac": exp_map_with_diac,
         "differences": rows
     }
+
