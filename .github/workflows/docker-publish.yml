@@ -20,6 +20,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./voice-deploy
+          context: "./voice deploy"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/child-voice:latest
