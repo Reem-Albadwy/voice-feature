@@ -1,0 +1,7 @@
+Flask
+torch
+transformers==4.44.2
+TTS
+jiwer
+pandas
+pydub
