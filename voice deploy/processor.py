@@ -7,6 +7,14 @@ from TTS.api import TTS
 os.environ["COQUI_TOS_AGREED"] = "1"
 
 
+orig_load = torch.load
+
+def legacy_load(*args, **kwargs):
+    kwargs["weights_only"] = False
+    return orig_load(*args, **kwargs)
+
+torch.load = legacy_load
+
 # ======================
 # Text normalization
 # ======================
@@ -231,4 +239,5 @@ def run_pipeline(wav_path, expected_text, out_dir):
         "mapping_with_diac": exp_map_with_diac,
         "differences": rows
     }
+
 
